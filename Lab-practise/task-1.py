@@ -18,7 +18,10 @@ print("Address:-Kalpvan\b courtyard") # back space"""
 """print("my name is",end="--")
 print("hardik")# end use"""
 
-a=True
-print(type(a))
+"""a=True
+print(type(a)) #type only"""
+
+
+
 
 

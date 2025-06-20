@@ -6,4 +6,4 @@ print(''' we are three person in my family
 print("hardik",end="@")
 print("221")using end function"""
 
-print("Hello","Hi","my name is hardik",sep="\n")
+print("Hello","Hi","my name is hardik",sep="\n") # sep sepration aapva mate
