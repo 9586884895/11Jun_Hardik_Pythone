@@ -1,9 +1,9 @@
 stdata={'id':101,'name':'hardik','sub':'python'}
 """print(stdata)
-print(stdata.keys())
-print(stdata.get('sub')) 
-print(stdata['name'])
-print(stdata.values())"""
+print(stdata.keys()) key findout mate
+print(stdata.get('sub'))  single value find karva mate 
+print(stdata['name']) only name print karva mate
+print(stdata.values())""" #  only values print
 #---------------------------#
 
 print(stdata)
