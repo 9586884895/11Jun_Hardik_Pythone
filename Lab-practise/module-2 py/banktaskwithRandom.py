@@ -1,5 +1,7 @@
 # Bank Account software
-Acno=int(input("Enter your account number:-"))
+import random
+Acno=random.randrange(11111111111,99999999999,10)
+print("Your Account Number is:-",Acno)
 Acnm=input("Enter your account name:-")
 Actype=input("Enter your account Type:-")
 Balance=0.0
@@ -40,9 +42,12 @@ def Statements():
     global y
     Deposit()
     Withdraw() 
-    ao() 
-    print("Your current Balance is:-",y)    
+    ao()
+    print("Your current balance is=",y)
+    exit()
     
+    
+
 Statements()
  # Function Calling  
 
