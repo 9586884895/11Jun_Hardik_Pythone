@@ -39,15 +39,14 @@ def Withdraw():
  
 
 def Statements():
-    global y
-    Deposit()
-    Withdraw() 
-    ao()
+    global y  
     print("Your current balance is=",y)
     exit()
     
-    
 
+Deposit()
+Withdraw()
+ao()
 Statements()
  # Function Calling  
 
