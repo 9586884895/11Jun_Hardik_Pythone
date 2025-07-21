@@ -7,6 +7,3 @@ city=input("Enter an City:-")
 
 
 fl.write(f"your id:-{id}\nName:{name}\ncity:-{city}")
-
-
-
