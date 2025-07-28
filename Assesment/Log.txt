@@ -1,0 +1,24 @@
+Date & Time: 2025-07-28 11:55:34.010866
+Account Number: 2740643
+Account Name: Hardik
+Account Type: Saving
+Balance: 145000.0
+------------------------------------------
+Date & Time: 2025-07-28 11:55:54.850755
+Account Number: 2372716
+Account Name: Jayesh
+Account Type: Current
+Balance: 15000.0
+------------------------------------------
+Date & Time: 2025-07-28 11:56:16.284410
+Account Number: 9143821
+Account Name: Bhagirath
+Account Type: Semi Saving
+Balance: 8000.0
+------------------------------------------
+Date & Time: 2025-07-28 12:06:03.867097
+Account Number: 2257230
+Account Name: Hardik Patel
+Account Type: Saving
+Balance: 8000.0
+------------------------------------------
