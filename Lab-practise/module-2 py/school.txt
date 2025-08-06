@@ -1,9 +1,0 @@
-
-your id:-101
-Name:Hardik
-city:-103
-------1------
-your id:-105
-Name:James Bond
-city:-Pipavav port
-------2------
