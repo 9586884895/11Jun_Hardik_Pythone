@@ -32,9 +32,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/about">About</a>
                     </li>
@@ -43,8 +41,21 @@
                     </li>
 
                 </ul>
-                <a href="/login" class="btn btn-success mx-2" type="submit">Login</a>
-                <a href="/signup" class="btn btn-danger" type="submit">Signup</a>
+                {% if user is none %}
+                <a href="/login" class="btn btn-success" type="submit">Login</a>
+                <a href="/signup" class="btn btn-danger mx-2" type="submit">Signup</a>
+                {% else %}
+                <div class="dropdown">
+                    <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">   
+                        {{user}}                  
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/profile">Update Profile</a></li>
+                        <li><a class="dropdown-item" href="/userlogout">Logout</a></li>
+                    </ul>
+                </div>
+                {% endif %}
 
             </div>
         </div>

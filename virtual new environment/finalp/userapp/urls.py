@@ -8,6 +8,8 @@ urlpatterns = [
     path('contact/',views.contact,name='contact'),
     path('profile/',views.profile,name='profile'),
     path('login/',views.login,name='login'),
-    path('signup/',views.signup,name='signup'),
+    path('signup/', views.usersignup, name='signup'),  # <--- add this line
+    path('userlogout/', views.userlogout, name='userlogout'),
+    path('otpverify/',views.otpverify,name='otpverify'),
 
 ]
