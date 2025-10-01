@@ -24,6 +24,7 @@
         <td>Dob</td>
         <td>Mobile</td>
         <td>Address</td>
+        <td>Action</td>
     </tr>
     {% for i in data %}
     <tr>
@@ -33,6 +34,8 @@
         <td>{{i.dob}}</td>
         <td>{{i.mobile}}</td>
         <td>{{i.address}}</td>
+        <td><a class="btn btn-warning" href="/update/{{i.id}}">update</a>           
+        <a class="btn btn-danger" href="/deletedata/{{i.id}}">Delete</a></td>
     </tr>
     {% endfor %}
     </table>

@@ -1,19 +1,19 @@
-"""for r in range(1,6):
+for r in range(1,6):
 
     for c in range(r):
         print("*", end="")
-    print("")"""
+    print("")
 
-"""
+
 for r in range(1,6):
     for c in range(r):
           print(r, end="")
-    print(" ")"""
-"""
+    print(" ")
+
 for r in range(1,6):
     for c in range(r):
           print(c+1, end="")
-    print(" ")"""
+    print(" ")
 p=1
 for r in range(1,6):
     for c in range(r):
