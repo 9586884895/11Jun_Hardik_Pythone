@@ -10,6 +10,8 @@ from finalp import settings
 def index(request):
     user=request.session.get("user")
     return render(request,'index.html',{'user':user})
+def Addnotes(request):
+    return render(request,'Addnotes.html')
 def contact(request):
     return render(request,'contact.html')
 def about(request):
