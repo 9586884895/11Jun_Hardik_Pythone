@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,31 +11,37 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #f8f9fa;
     }
+
     .sidebar {
       height: 100vh;
       background-color: #343a40;
       color: #fff;
       padding-top: 1rem;
     }
+
     .sidebar a {
       color: #adb5bd;
       text-decoration: none;
       padding: 0.75rem 1rem;
       display: block;
     }
+
     .sidebar a:hover {
       background-color: #495057;
       color: #fff;
     }
+
     .navbar {
       background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     .card {
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
   </style>
 </head>
+
 <body>
   <div class="container-fluid">
     <div class="row">
@@ -43,9 +50,8 @@
         <div class="position-sticky">
           <h4 class="text-center mb-4">Admin Panel</h4>
           <a href="#">Dashboard</a>
-          <a href="#">Users</a>
-          <a href="#">Analytics</a>
-          <a href="#">Settings</a>
+          <a href="/adminapp/admin_userdata">Users Data</a> 
+          <a href="/adminapp/admin_notesdata">Notes Data</a>         
           <a href="#">Logout</a>
         </div>
       </nav>
@@ -55,7 +61,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light mt-3 mb-4">
           <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">Welcome, Admin</span>
+            <span class="navbar-brand mb-0 h1">Bonjour,Admin</span>
           </div>
         </nav>
 
@@ -64,27 +70,20 @@
           <div class="col-md-4">
             <div class="card text-white bg-primary">
               <div class="card-body">
-                <h5 class="card-title">Users</h5>
-                <p class="card-text">1,245 Active Users</p>
+                <h5 class="card-title">Active-Users</h5>
+                <p class="card-text">{{userdata}}</p>
               </div>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card text-white bg-success">
               <div class="card-body">
-                <h5 class="card-title">Sales</h5>
-                <p class="card-text">$23,500 This Month</p>
+                <h5 class="card-title">Notes</h5>
+                <p class="card-text">{{notesdata}}</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card text-white bg-warning">
-              <div class="card-body">
-                <h5 class="card-title">Alerts</h5>
-                <p class="card-text">3 New Notifications</p>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
         <!-- Table Section -->
@@ -92,37 +91,28 @@
           <div class="col">
             <div class="card">
               <div class="card-header">
-                Recent Activity
+                Active-User
               </div>
               <div class="card-body">
                 <table class="table table-hover">
                   <thead>
                     <tr>
-                      <th>#</th>
-                      <th>User</th>
-                      <th>Action</th>
-                      <th>Date</th>
+                      <th>Id</th>                      
+                      <th>Full Name</th>
+                      <th>Email</th>
+                      <th>Mobile no.</th>
                     </tr>
                   </thead>
                   <tbody>
+                    {% for i in udata %}
                     <tr>
-                      <td>1</td>
-                      <td>John Doe</td>
-                      <td>Logged In</td>
-                      <td>Oct 1, 2025</td>
+                      <td>{{i.id}}</td>                      
+                      <td>{{i.fullname}}</td>
+                      <td>{{i.email}}</td>
+                      <td>{{i.mobile}}</td>
                     </tr>
-                    <tr>
-                      <td>2</td>
-                      <td>Jane Smith</td>
-                      <td>Updated Profile</td>
-                      <td>Sep 30, 2025</td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>Mark Lee</td>
-                      <td>Added Post</td>
-                      <td>Sep 29, 2025</td>
-                    </tr>
+                    {% endfor %}                  
+                    
                   </tbody>
                 </table>
               </div>
@@ -136,4 +126,5 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
