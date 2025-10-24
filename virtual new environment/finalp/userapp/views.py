@@ -68,22 +68,28 @@ def usersignup(request):
     global otp
     if request.method=="POST":
         form=signupform(request.POST)
-        if form.is_valid():
-            form.save()
-            msg="Signup sucessfully!"
+        em=request.POST["email"]
+        email=signup.objects.filter(email=em).exists()
+        if email:
+            print("Email id already Exists")
+            msg="Email address already Exists"
+        else:    
+            if form.is_valid():
+                form.save()
+                msg="Signup sucessfully!"
 
-            # otp sending code...
-            otp=random.randint(111111,999999)
-            sub="your one time password"
-            message=f"Dear User!\n\nThanks for register our service!\n\For account verification, Your one time password is {otp}.\n\nThanks & Regards\nAppNotes Teams\n+91 9586884895 | hardik.isavani@gmail.com"
-            from_email=settings.EMAIL_HOST_USER
-            to_email=[request.POST["email"]]
-            send_mail(subject=sub,message=message,from_email=from_email,recipient_list=to_email)
-            print("email send sucessfully")
-            return redirect('otpverify')
-        else:
-            print(form.errors)
-            msg="error!Something Went wrong..."
+                # otp sending code...
+                otp=random.randint(111111,999999)
+                sub="your one time password"
+                message=f"Dear User!\n\nThanks for register our service!\n\For account verification, Your one time password is {otp}.\n\nThanks & Regards\nAppNotes Teams\n+91 9586884895 | hardik.isavani@gmail.com"
+                from_email=settings.EMAIL_HOST_USER
+                to_email=[request.POST["email"]]
+                send_mail(subject=sub,message=message,from_email=from_email,recipient_list=to_email)
+                print("email send sucessfully")
+                return redirect('otpverify')
+            else:
+                print(form.errors)
+                msg="error!Something Went wrong..."
     return render(request,'signup.html',{'msg':msg})
 
 def userlogout(request):
